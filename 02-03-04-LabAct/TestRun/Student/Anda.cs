@@ -169,7 +169,7 @@ namespace TestRun.Student
                 {
                     if (i >= 1)
                     {
-                        Console.WriteLine("Type 'exit' to finish entering courses.                                      GRADE CALCULATOR");
+                        Console.WriteLine("Type 'exit' to finish entering courses.                                      GRADE CALCULATOR Author: Anda");
                     }
 
                     answer = promptHandler.Prompt("Enter the course name: ");
@@ -207,7 +207,7 @@ namespace TestRun.Student
                 student = new Student(name, courses.ToArray(), grades.ToArray());
                 while (true)
                 {
-                    answer = promptHandler.Prompt($"Grade analyzer for {name}, type display, max, min, avg, overall");
+                    answer = promptHandler.Prompt($"Grade analyzer for {name}, type display, max, min, avg, overall; Author: Anda");
 
                     switch (answer?.ToLower())
                     {
