@@ -33,8 +33,6 @@ namespace TestRun.Student
                     Console.WriteLine(" Invalid Grade! ");
                     break;
                 }
-
-
             }
             double[] equivalent = new double[courses];
             for (int i = 0; i < courses; i++)
@@ -158,4 +156,5 @@ namespace TestRun.Student
 
 
 //THIS IS A TEMPLATE FILE 
+
 
