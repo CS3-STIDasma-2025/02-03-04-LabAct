@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -116,6 +116,19 @@ namespace TestRun.Student
 
             double average = Math.Round(sum / numCourse, 2);
             string overallEquivalent = GetEquivalent(average);
+            static string GetEquivalent(double grade)
+            {
+                if (grade >= 1.0 && grade < 1.25) return "Excellent";
+                else if (grade >= 1.25 && grade < 1.5) return "Superior";
+                else if (grade >= 1.5 && grade < 1.75) return "Very Good";
+                else if (grade >= 1.75 && grade < 2.0) return "Good";
+                else if (grade >= 2.0 && grade < 2.25) return "Above Average";
+                else if (grade >= 2.25 && grade < 2.5) return "Average";
+                else if (grade >= 2.5 && grade < 2.75) return "Satisfactory";
+                else if (grade >= 2.75 && grade < 3.0) return "Passing";
+                else if (grade == 3.0) return "Barely Passing";
+                else return "Invalid Grade";
+            }
 
             //Results
             Console.WriteLine("=====================================");
@@ -134,19 +147,7 @@ namespace TestRun.Student
 
 
 
-            static string GetEquivalent(double grade)
-            {
-                if (grade >= 1.0 && grade < 1.25) return "Excellent";
-                else if (grade >= 1.25 && grade < 1.5) return "Superior";
-                else if (grade >= 1.5 && grade < 1.75) return "Very Good";
-                else if (grade >= 1.75 && grade < 2.0) return "Good";
-                else if (grade >= 2.0 && grade < 2.25) return "Above Average";
-                else if (grade >= 2.25 && grade < 2.5) return "Average";
-                else if (grade >= 2.5 && grade < 2.75) return "Satisfactory";
-                else if (grade >= 2.75 && grade < 3.0) return "Passing";
-                else if (grade == 3.0) return "Barely Passing";
-                else return "Invalid Grade";
-            }
+           
         }
 
 
