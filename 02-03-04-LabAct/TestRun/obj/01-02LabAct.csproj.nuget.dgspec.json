@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\johnb\\source\\repos\\02-03-04-LabAct\\TestRun\\01-02LabAct.csproj": {}
+    "C:\\Users\\Elvhie\\OneDrive\\Documents\\GitHub\\02-03-04-LabAct\\02-03-04-LabAct\\TestRun\\01-02LabAct.csproj": {}
   },
   "projects": {
-    "C:\\Users\\johnb\\source\\repos\\02-03-04-LabAct\\TestRun\\01-02LabAct.csproj": {
+    "C:\\Users\\Elvhie\\OneDrive\\Documents\\GitHub\\02-03-04-LabAct\\02-03-04-LabAct\\TestRun\\01-02LabAct.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\johnb\\source\\repos\\02-03-04-LabAct\\TestRun\\01-02LabAct.csproj",
+        "projectUniqueName": "C:\\Users\\Elvhie\\OneDrive\\Documents\\GitHub\\02-03-04-LabAct\\02-03-04-LabAct\\TestRun\\01-02LabAct.csproj",
         "projectName": "01-02LabAct",
-        "projectPath": "C:\\Users\\johnb\\source\\repos\\02-03-04-LabAct\\TestRun\\01-02LabAct.csproj",
-        "packagesPath": "C:\\Users\\johnb\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\johnb\\source\\repos\\02-03-04-LabAct\\TestRun\\obj\\",
+        "projectPath": "C:\\Users\\Elvhie\\OneDrive\\Documents\\GitHub\\02-03-04-LabAct\\02-03-04-LabAct\\TestRun\\01-02LabAct.csproj",
+        "packagesPath": "C:\\Users\\Elvhie\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Elvhie\\OneDrive\\Documents\\GitHub\\02-03-04-LabAct\\02-03-04-LabAct\\TestRun\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\johnb\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Elvhie\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -65,7 +65,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
