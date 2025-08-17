@@ -28,6 +28,12 @@ namespace TestRun.Student
                 Console.WriteLine($"\n\n\n  Enter the Grade for {nameCourse[i]}: ");
                 grade[i] = Convert.ToDouble(Console.ReadLine());
 
+                if (grade[i] < 0 || grade[i] > 100)
+                {
+                    Console.WriteLine(" Invalid Grade! ");
+                    break;
+                }
+
 
             }
             double[] equivalent = new double[courses];
@@ -152,3 +158,4 @@ namespace TestRun.Student
 
 
 //THIS IS A TEMPLATE FILE 
+
