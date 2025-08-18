@@ -1,5 +1,6 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -231,10 +232,11 @@ namespace TestRun.Student
             totalGrade = (float)Math.Round(totalGrade, 2, MidpointRounding.AwayFromZero);
             averageGrade = (float)Math.Round(averageGrade, 2, MidpointRounding.AwayFromZero);
 
+            float aveGradeConverted = Convert_Grade(averageGrade);
             Console.WriteLine($"Overall Grade: {totalGrade}");
-            Console.WriteLine($"Average Grade: {averageGrade}\n");
-        }
+            Console.WriteLine($"Average Grade: {averageGrade} | {aveGradeConverted:F2}\n");
 
+        }
         /*If-else-if statements for calculating the equivalence(In STI College Grading System)
         of the % grade input from user*/
         static void grade_Equivalent()
@@ -272,34 +274,43 @@ namespace TestRun.Student
                 int index = Array.IndexOf(lowerCasedNames, input_Name.Trim().ToLower());
                 float grade = grades[index];
 
-                if (grade >= 97.5f && grade <= 100.00f)
-                    equivalentGrade = 1.00f;
-                else if (grade >= 94.5f)
-                    equivalentGrade = 1.25f;
-                else if (grade >= 91.5f)
-                    equivalentGrade = 1.50f;
-                else if (grade >= 86.5f)
-                    equivalentGrade = 1.75f;
-                else if (grade >= 81.5f)
-                    equivalentGrade = 2.00f;
-                else if (grade >= 76.0f)
-                    equivalentGrade = 2.25f;
-                else if (grade >= 70.5f)
-                    equivalentGrade = 2.50f;
-                else if (grade >= 65.0f)
-                    equivalentGrade = 2.75f;
-                else if (grade >= 59.5f)
-                    equivalentGrade = 3.00f;
-                else if (grade >= 0f)
-                    equivalentGrade = 5.00f;
-                else
-                    Console.WriteLine("\nThis course is either dropped or incomplete requirements");
+                equivalentGrade = Convert_Grade(grade);
 
                 Console.WriteLine("\nEquivalent Grade:");
                 Console.WriteLine(course_Names[index] + " | " + grade + " | " + $"{equivalentGrade:F2}");
 
                 repeat = AskYesNo("\nDo you still want to find the equivalent grade of a course? (yes/no)? ");
             } while (repeat);
+        }
+
+        static float Convert_Grade(float input)
+        {
+            float equivalentGrade = 0f;
+            if (input >= 97.5f && input <= 100.00f)
+                equivalentGrade = 1.00f;
+            else if (input >= 94.5f)
+                equivalentGrade = 1.25f;
+            else if (input >= 91.5f)
+                equivalentGrade = 1.50f;
+            else if (input >= 86.5f)
+                equivalentGrade = 1.75f;
+            else if (input >= 81.5f)
+                equivalentGrade = 2.00f;
+            else if (input >= 76.0f)
+                equivalentGrade = 2.25f;
+            else if (input >= 70.5f)
+                equivalentGrade = 2.50f;
+            else if (input >= 65.0f)
+                equivalentGrade = 2.75f;
+            else if (input >= 59.5f)
+                equivalentGrade = 3.00f;
+            else if (input >= 0f)
+                equivalentGrade = 5.00f;
+            else
+                Console.WriteLine("\nThis course is either dropped or incomplete requirements");
+
+            return equivalentGrade;
+
         }
 
         //Input Validation method for Yes or No questions
