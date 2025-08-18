@@ -36,7 +36,7 @@ namespace TestRun.Student
 
             for (int i = 0; i < courseCount; i++)
             {
-                Console.WriteLine("]" + studentName + "]");
+                Console.WriteLine("[" + studentName + "]");
                 Console.Write($"Enter course name: ");
                 courseNames[i] = Console.ReadLine();
 
