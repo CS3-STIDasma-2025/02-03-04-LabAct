@@ -44,20 +44,32 @@ namespace TestRun.Student
                 Console.WriteLine($"{subject.name} | {subject.grade} | {subject.average}");
             }
 
+            Subject largest = subjs[0];
+            Subject smallest = subjs[0];
+
+            foreach(var subject in subjs)
+            {
+                if (subject.grade < smallest.grade)
+                {
+                    smallest = subject;
+                }
+                if (subject.grade > largest.grade)
+                {
+                    largest = subject;
+                }
+            }
+
             Console.ForegroundColor = ConsoleColor.Green;
-            subjs.Sort((a, b) => a.grade.CompareTo(b.grade));
-            Subject largest = subjs[subjs.Count - 1];
-            Console.WriteLine("Highest Grade: ");
+            Console.WriteLine("Highest Grade:");
             Console.WriteLine($"{largest.name} | {largest.grade} | {largest.average}");
 
             Console.ForegroundColor = ConsoleColor.Red;
-            Subject smallest = subjs[0];
             Console.WriteLine("Lowest Grade: ");
             Console.WriteLine($"{smallest.name} | {smallest.grade} | {smallest.average}");
 
             Console.ForegroundColor = ConsoleColor.Yellow;
             double average = subjs.Average(s => s.grade);
-            Console.WriteLine($"Average Grade: {average:F2} | {getEquival((float)average):F2}");
+            Console.WriteLine($"Average Grade: {average:F2} | {getEquival((float)average)}");
             int overall = subjs.Sum(s => s.grade);
             Console.WriteLine($"Total Grade: {overall}");
 
