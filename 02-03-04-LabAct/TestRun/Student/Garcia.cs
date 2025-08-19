@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Specialized;
 using System.Linq;
 
@@ -44,47 +44,53 @@ namespace TestRun.Student
             Console.Clear();
 
             Console.WriteLine("=======================================");
-            Console.WriteLine("   STUDENT GRADE REPORT");
+            Console.WriteLine("           STUDENT GRADE REPORT        ");
             Console.WriteLine("=======================================");
             Console.WriteLine($"Student Name: {studentName}");
             Console.WriteLine("---------------------------------------");
             Console.WriteLine("Course Name\t|\tGrade\t|\tEquivalent");
             Console.WriteLine("---------------------------------------");
 
-            foreach (var i in Enumerable.Range(0, n))
-            {
-                string equivalent = GetGradeDescription(grades[i]);
-                Console.WriteLine($"{courses[i],-16} | {grades[i],-5} | {equivalent}");
-            }
-
-            Console.WriteLine("---------------------------------------");
-
+            int maxIndex = 0, minIndex = 0;
             double maxGrade = grades[0];
             double minGrade = grades[0];
             double sum = 0;
 
-            foreach (double g in grades)
+            for (int i = 0; i < n; i++)
             {
-                maxGrade = Math.Max(maxGrade, g);
-                minGrade = Math.Min(minGrade, g);
-                sum += g;
+                string equivalent = GetGradeDescription(grades[i]);
+                Console.WriteLine($"{courses[i],-16} | {grades[i],-5} | {equivalent}");
 
-                if (g == 5.0)
+                if (grades[i] == 5.0)
                 {
                     Console.WriteLine("A failing grade (5.0) was detected. Stopping calculation early.");
                     break;
                 }
+
+                if (grades[i] > maxGrade)
+                {
+                    maxGrade = grades[i];
+                    maxIndex = i;
+                }
+
+                if (grades[i] < minGrade)
+                {
+                    minGrade = grades[i];
+                    minIndex = i;
+                }
+
+                sum += grades[i];
             }
 
             double avg = Math.Round(sum / n, 2);
             string overallEquivalent = GetGradeDescription(avg);
 
-            Console.WriteLine($"Maximum Grade: {maxGrade}");
-            Console.WriteLine($"Minimum Grade: {minGrade}");
+            Console.WriteLine("---------------------------------------");
+            Console.WriteLine($"Maximum Grade: {maxGrade} in {courses[maxIndex]}");
+            Console.WriteLine($"Minimum Grade: {minGrade} in {courses[minIndex]}");
             Console.WriteLine($"Average Grade: {avg}");
             Console.WriteLine($"Overall Grade: {avg}");
             Console.WriteLine($"Equivalent Grade: {overallEquivalent}");
-
             Console.WriteLine("=======================================");
             Console.WriteLine("Author: John Guiller R. Garcia");
             Console.WriteLine("=======================================");
@@ -92,19 +98,18 @@ namespace TestRun.Student
 
         static string GetGradeDescription(double grade)
         {
-            if (grade >= 97.49) { return "1.00 | Excellent"; }
-            else if (grade >= 95.49) { return "1.25 | Very Good "; }
-            else if (grade >= 91.49) { return "1.50 | Good "; }
-            else if (grade >= 86.49) { return "1.75 | Fair "; }
-            else if (grade >= 81.49) { return "2.00 | Satisfactory Fair"; }
-            else if (grade >= 75.49) { return "2.25 | Satisfied "; }
-            else if (grade >= 70.49) { return "2.50 | Passed"; }
-            else if (grade >= 65.49) { return "2.75 | Barely passed"; }
-            else if (grade >= 59.49) { return "3.00 | Terrible"; }
-            else if (grade >= 55.49) { return "4.00 | Terrible"; }
-            else if (grade >= 51.49) { return "5.00 | Worst"; }
-            else { return "Failed"; }
-
+            if (grade >= 97.49) return "1.00 | Excellent";
+            else if (grade >= 95.49) return "1.25 | Very Good";
+            else if (grade >= 91.49) return "1.50 | Good";
+            else if (grade >= 86.49) return "1.75 | Fair";
+            else if (grade >= 81.49) return "2.00 | Satisfactory Fair";
+            else if (grade >= 75.49) return "2.25 | Satisfied";
+            else if (grade >= 70.49) return "2.50 | Passed";
+            else if (grade >= 65.49) return "2.75 | Barely passed";
+            else if (grade >= 59.49) return "3.00 | Terrible";
+            else if (grade >= 55.49) return "4.00 | Terrible";
+            else if (grade >= 51.49) return "5.00 | Worst";
+            else return "Failed";
         }
     }
 }
